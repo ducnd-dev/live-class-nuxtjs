@@ -26,11 +26,11 @@ export default class App {
             duration: 60 * 30,
             courseWareList: [],
             recordUrl: '<Your Record Page Url>',
-            listener: () => {
-                // console.log('evt', evt);
+            listener: (evt) => {
+                console.log('evt', evt);
             },
         })
-            .then((res) => console.log(res))
+            .then((res) => console.log('res', res))
             .catch((err) => console.log(err));
     }
 }

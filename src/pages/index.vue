@@ -1,16 +1,14 @@
 <template>
-    <div id="live-class" />
+    <div id="live-class">
+        <el-form>
+            <el-form-item />
+        </el-form>
+        <nuxt-link to="/liveclass">
+            Live class
+        </nuxt-link>
+    </div>
 </template>
 
 <script>
-    import App from '../components/agora';
-
-    export default {
-        created() {
-            window.addEventListener('load', () => {
-                const app = new App(document.getElementById('live-class'));
-                app.setupClassroom();
-            });
-        },
-    };
+    export default {};
 </script>
