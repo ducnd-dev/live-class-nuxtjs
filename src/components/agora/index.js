@@ -2,16 +2,16 @@
 import { AgoraEduSDK } from 'agora-classroom-sdk';
 
 export default class App {
-    // constructor(elem) {
-    //     if (!elem) return;
-    //     this.elem = elem;
-    // }
+    constructor(elem) {
+        if (!elem) return;
+        this.elem = elem;
+    }
 
     setupClassroom() {
         AgoraEduSDK.config({
             appId: 'ca1e80b04d894071927ff829377ad9f6',
         });
-        AgoraEduSDK.launch(document.querySelector('#live-class'), {
+        AgoraEduSDK.launch(document.querySelector(`#${this.elem.id}`), {
             rtmToken:
                 '006ca1e80b04d894071927ff829377ad9f6IABRQySz+LgjkRPP9sPRNvgT0doMTy2Rx7dl2mvtdXXfPb8HbDYAAAAAEAAj6skOHEdDYQEA6AMcR0Nh',
             userUuid: 'duc',
@@ -29,6 +29,8 @@ export default class App {
             listener: () => {
                 // console.log('evt', evt);
             },
-        });
+        })
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err));
     }
 }

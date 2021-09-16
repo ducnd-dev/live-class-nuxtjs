@@ -7,8 +7,10 @@
 
     export default {
         created() {
-            const app = new App();
-            app.setupClassroom();
+            window.addEventListener('load', () => {
+                const app = new App(document.getElementById('live-class'));
+                app.setupClassroom();
+            });
         },
     };
 </script>
