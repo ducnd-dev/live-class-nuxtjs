@@ -1,5 +1,4 @@
 // store/index.js
-
 export const actions = {
     // https://nuxtjs.org/guide/vuex-store/#the-nuxtserverinit-action
     // automatically refresh the access token on the initial request to the server, if possible
